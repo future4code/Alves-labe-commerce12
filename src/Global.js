@@ -3,11 +3,20 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
     body {
         line-height: 1;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+
+        background: 
+        linear-gradient(135deg, grey 25%, transparent 25%) -50px 0,
+        linear-gradient(225deg, grey 25%, transparent 25%) -50px 0,
+        linear-gradient(315deg, grey 25%, transparent 25%),
+        linear-gradient(45deg, grey 25%, transparent 25%);	
+        background-size: 2em 2em;
+        background-color: #d2d2d2;
+        
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     html, body, div, span, applet, object, iframe,

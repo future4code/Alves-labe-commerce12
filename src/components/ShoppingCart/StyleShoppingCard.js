@@ -5,6 +5,9 @@ export const ContainerShoppingCart = styled.section`
 	padding: 8px;
 	list-style: none;
 
+	background-color: #fff;
+	border-radius: 5px;
+
 	h4 {
 		margin: 10px 0;
 
@@ -31,5 +34,19 @@ export const ListaCart = styled.div`
 
 	button {
 		cursor: pointer;
+		color: white;
+
+		font-weight: bold;
+		border: none;
+		border-radius: 4px;
+
+		background-color: black;
+		padding: 10px;
+		transition: all 0.2s;
+
+		:hover {
+			transition: all 0.2s;
+			opacity: 0.7;
+		}
 	}
 `;
