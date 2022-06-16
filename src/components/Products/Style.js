@@ -2,21 +2,22 @@ import styled from "styled-components";
 
 export const ProdutosCaixa = styled.ul`
 	display: grid;
-	width: 50vw;
 
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 20px;
 
 	margin-top: 10px;
+	padding-top: 20px;
 	list-style: none;
 
-	padding-top: 20px;
-
 	li {
+		display: flex;
+		flex-direction: column;
 		border: 1px solid black;
 
 		img {
-			width: 100%;
+			align-self: center;
+			max-height: 250px;
 		}
 	}
 `;
