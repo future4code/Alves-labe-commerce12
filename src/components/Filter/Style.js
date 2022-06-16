@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const FiltroContainer = styled.section`
 	border: 1px solid black;
+
+	background-color: #fff;
+	border-radius: 5px;
 `;
 
 export const FiltroBox = styled.section`
@@ -18,8 +21,16 @@ export const FiltroBox = styled.section`
 		font-weight: bold;
 	}
 
+	label {
+		margin-bottom: 5px;
+	}
+
 	input {
 		margin-bottom: 10px;
 		width: 65%;
+
+		border: 1px solid black;
+		padding: 8px;
+		border-radius: 5px;
 	}
 `;
