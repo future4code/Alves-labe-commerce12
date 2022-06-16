@@ -4,18 +4,17 @@ import ShoppingCartItem from "./components/ShoppingCart/ShoppingCartItem";
 
 import { AppContainer } from "./Style";
 import { GlobalStyle } from "./Global";
-import Filter  from "./components/Filter/Filter";
+import Filter from "./components/Filter/Filter";
 
 export default class App extends Component {
 	render() {
 		return (
 			<AppContainer>
 				<GlobalStyle />
+				<Filter />
 				<ProductCards />
-				<ShoppingCartItem/>
-				<Filter/>
+				<ShoppingCartItem />
 			</AppContainer>
-			
 		);
 	}
 }

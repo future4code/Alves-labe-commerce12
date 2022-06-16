@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const AppContainer = styled.main`
-	display: flex;
-	align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	gap: 8px;
 
-	justify-content:space-evenly;
-	height: 130vh;
+	margin: 20px;
 `;

@@ -5,6 +5,12 @@ import {
 	QuantidadeProdutos,
 } from "./Style";
 
+import Camiseta1 from "../.././img/camiseta-alien.jpg";
+import Camiseta2 from "../.././img/camiseta-nasa.jpg";
+import Camiseta3 from "../.././img/camiseta-alien2.jpg";
+import Camiseta4 from "../.././img/camiseta-astronauta.jpg";
+import Camiseta5 from "../.././img/camiseta-ovni.jpg";
+
 export default class ProductCards extends Component {
 	render() {
 		return (
@@ -21,7 +27,7 @@ export default class ProductCards extends Component {
 				</QuantidadeProdutos>
 				<ProdutosCaixa>
 					<li>
-						<img src="https://picsum.photos/200/200?a=1" alt="" />
+						<img src={Camiseta1} alt="" />
 						<ProdutoInfo>
 							<h3>Produto Exemplo 1</h3>
 							<p>R$123,00</p>
@@ -29,7 +35,7 @@ export default class ProductCards extends Component {
 						</ProdutoInfo>
 					</li>
 					<li>
-						<img src="https://picsum.photos/200/200?a=2" alt="" />
+						<img src={Camiseta2} alt="" />
 						<ProdutoInfo>
 							<h3>Produto Exemplo 2</h3>
 							<p>R$123,00</p>
@@ -37,7 +43,7 @@ export default class ProductCards extends Component {
 						</ProdutoInfo>
 					</li>
 					<li>
-						<img src="https://picsum.photos/200/200?a=3" alt="" />
+						<img src={Camiseta3} alt="" />
 						<ProdutoInfo>
 							<h3>Produto Exemplo 3</h3>
 							<p>R$123,00</p>
@@ -45,7 +51,7 @@ export default class ProductCards extends Component {
 						</ProdutoInfo>
 					</li>
 					<li>
-						<img src="https://picsum.photos/200/200?a=4" alt="" />
+						<img src={Camiseta4} alt="" />
 						<ProdutoInfo>
 							<h3>Produto Exemplo 4</h3>
 							<p>R$123,00</p>
@@ -53,7 +59,7 @@ export default class ProductCards extends Component {
 						</ProdutoInfo>
 					</li>
 					<li>
-						<img src="https://picsum.photos/200/200?a=5" alt="" />
+						<img src={Camiseta5} alt="" />
 						<ProdutoInfo>
 							<h3>Produto Exemplo 5</h3>
 							<p>R$123,00</p>
