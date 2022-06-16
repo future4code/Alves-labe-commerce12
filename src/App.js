@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ProductCards from "./components/Products/ProductCards";
+import ShoppingCartItem from "./components/ShoppingCart/ShoppingCartItem";
 
 import { AppContainer } from "./Style";
 import { GlobalStyle } from "./Global";
@@ -10,7 +11,9 @@ export default class App extends Component {
 			<AppContainer>
 				<GlobalStyle />
 				<ProductCards />
+				<ShoppingCartItem/>
 			</AppContainer>
+			
 		);
 	}
 }
