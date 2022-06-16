@@ -4,6 +4,7 @@ import ShoppingCartItem from "./components/ShoppingCart/ShoppingCartItem";
 
 import { AppContainer } from "./Style";
 import { GlobalStyle } from "./Global";
+import Filter  from "./components/Filter/Filter";
 
 export default class App extends Component {
 	render() {
@@ -12,6 +13,7 @@ export default class App extends Component {
 				<GlobalStyle />
 				<ProductCards />
 				<ShoppingCartItem/>
+				<Filter/>
 			</AppContainer>
 			
 		);
