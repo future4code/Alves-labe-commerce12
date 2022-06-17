@@ -56,13 +56,13 @@ export default class ProductCards extends Component {
 	};
 
 	render() {
-		const sorted = this.state.produtos.sort((a, b) => {
+		const ordenarProdutos = this.state.produtos.sort((a, b) => {
 			const isReversed = this.state.orderType === "cre" ? 1 : -1;
 
 			return isReversed * a.nome.localeCompare(b.nome);
 		});
 
-		const listaDeProdutos = sorted.map((produto) => {
+		const listaDeProdutos = ordenarProdutos.map((produto) => {
 			return (
 				<li key={produto.id}>
 					<img src={produto.imagem} alt="" />
