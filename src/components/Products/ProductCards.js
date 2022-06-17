@@ -12,74 +12,77 @@ import Camiseta4 from "../.././img/camiseta-astronauta.jpg";
 import Camiseta5 from "../.././img/camiseta-ovni.jpg";
 
 export default class ProductCards extends Component {
-		state ={
-			order:"asc"
-		}
+	state = {
+		produtos: [
+			{
+				id: 1,
+				imagem: Camiseta1,
+				nome: "Camiseta Alien",
+				valor: 79.9,
+			},
+			{
+				id: 2,
+				imagem: Camiseta2,
+				nome: "Camiseta Nasa",
+				valor: 79.9,
+			},
+			{
+				id: 3,
+				imagem: Camiseta3,
+				nome: "Camiseta Alien",
+				valor: 59.9,
+			},
+			{
+				id: 4,
+				imagem: Camiseta4,
+				nome: "Camiseta Astronauta",
+				valor: 59.9,
+			},
+			{
+				id: 5,
+				imagem: Camiseta5,
+				nome: "Camiseta Ovni",
+				valor: 59.9,
+			},
+		],
+	};
 
-		updateOrder = (event) => {
-			this.setState({
-				order: event.target.value
-			})
-		}
-
+	updateOrder = (event) => {
+		this.setState({
+			order: event.target.value,
+		});
+	};
 
 	render() {
 		return (
 			<div>
 				<QuantidadeProdutos>
-					<p>Quantidade de Produtos: 4</p>
+					<p>Quantidade de Produtos: {this.state.produtos.length}</p>
 					<label>
 						Ordenação:
 						<select
-						name="order"
-						value={this.state.order}
-						onChange={this.updateOrder}	>
+							name="order"
+							value={this.state.order}
+							onChange={this.updateOrder}
+						>
 							<option value="asc">Crescente</option>
 							<option value="desc">Decrescente</option>
 						</select>
 					</label>
 				</QuantidadeProdutos>
 				<ProdutosCaixa>
-					<li>
-						<img src={Camiseta1} alt="" />
-						<ProdutoInfo>
-							<h3>Produto Exemplo 1</h3>
-							<p>R$123,00</p>
-							<button>Adicionar ao carrinho</button>
-						</ProdutoInfo>
-					</li>
-					<li>
-						<img src={Camiseta2} alt="" />
-						<ProdutoInfo>
-							<h3>Produto Exemplo 2</h3>
-							<p>R$123,00</p>
-							<button>Adicionar ao carrinho</button>
-						</ProdutoInfo>
-					</li>
-					<li>
-						<img src={Camiseta3} alt="" />
-						<ProdutoInfo>
-							<h3>Produto Exemplo 3</h3>
-							<p>R$123,00</p>
-							<button>Adicionar ao carrinho</button>
-						</ProdutoInfo>
-					</li>
-					<li>
-						<img src={Camiseta4} alt="" />
-						<ProdutoInfo>
-							<h3>Produto Exemplo 4</h3>
-							<p>R$123,00</p>
-							<button>Adicionar ao carrinho</button>
-						</ProdutoInfo>
-					</li>
-					<li>
-						<img src={Camiseta5} alt="" />
-						<ProdutoInfo>
-							<h3>Produto Exemplo 5</h3>
-							<p>R$123,00</p>
-							<button>Adicionar ao carrinho</button>
-						</ProdutoInfo>
-					</li>
+					{this.state.produtos.map((produto) => {
+						return (
+							<li key={produto.id}>
+								<img src={produto.imagem} alt="" />
+								<ProdutoInfo>
+									<h3>{produto.nome}</h3>
+									<p>R$ {produto.valor}</p>
+									<button>Adicionar ao carrinho</button>
+								</ProdutoInfo>
+							</li>
+						);
+					})}
 				</ProdutosCaixa>
 			</div>
 		);
