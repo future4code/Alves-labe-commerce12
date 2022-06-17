@@ -5,11 +5,11 @@ import {
 	QuantidadeProdutos,
 } from "./Style";
 
-import Camiseta1 from "../.././img/camiseta-alien.jpg";
-import Camiseta2 from "../.././img/camiseta-nasa.jpg";
-import Camiseta3 from "../.././img/camiseta-alien2.jpg";
-import Camiseta4 from "../.././img/camiseta-astronauta.jpg";
-import Camiseta5 from "../.././img/camiseta-ovni.jpg";
+import Camiseta1 from "../.././img/camiseta-alien.png";
+import Camiseta2 from "../.././img/camiseta-nasa.png";
+import Camiseta3 from "../.././img/camiseta-alien2.png";
+import Camiseta4 from "../.././img/camiseta-astronauta.png";
+import Camiseta5 from "../.././img/camiseta-ovni.png";
 
 export default class ProductCards extends Component {
 	state = {
