@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+	ContainerProdutos,
 	ProdutosCaixa,
 	ProdutoInfo,
 	QuantidadeProdutos,
@@ -45,19 +46,40 @@ export default class ProductCards extends Component {
 				valor: 59.9,
 			},
 		],
+		orderType: "cre",
 	};
 
-	updateOrder = (event) => {
+	updateOrder = (e) => {
 		this.setState({
-			order: event.target.value,
+			orderType: e.target.value,
 		});
 	};
 
 	render() {
+		const sorted = this.state.produtos.sort((a, b) => {
+			const isReversed = this.state.orderType === "cre" ? 1 : -1;
+
+			return isReversed * a.nome.localeCompare(b.nome);
+		});
+
+		const listaDeProdutos = sorted.map((produto) => {
+			return (
+				<li key={produto.id}>
+					<img src={produto.imagem} alt="" />
+					<ProdutoInfo>
+						<h3>{produto.nome}</h3>
+						<p>R$ {produto.valor}</p>
+						<button>Adicionar ao carrinho</button>
+					</ProdutoInfo>
+				</li>
+			);
+		});
+
 		return (
-			<div>
+			<ContainerProdutos>
 				<QuantidadeProdutos>
 					<p>Quantidade de Produtos: {this.state.produtos.length}</p>
+
 					<label>
 						Ordenação:
 						<select
@@ -65,26 +87,15 @@ export default class ProductCards extends Component {
 							value={this.state.order}
 							onChange={this.updateOrder}
 						>
-							<option value="asc">Crescente</option>
-							<option value="desc">Decrescente</option>
+							<option value="cre">Crescente</option>
+
+							<option value="des">Decrescente</option>
 						</select>
 					</label>
 				</QuantidadeProdutos>
-				<ProdutosCaixa>
-					{this.state.produtos.map((produto) => {
-						return (
-							<li key={produto.id}>
-								<img src={produto.imagem} alt="" />
-								<ProdutoInfo>
-									<h3>{produto.nome}</h3>
-									<p>R$ {produto.valor}</p>
-									<button>Adicionar ao carrinho</button>
-								</ProdutoInfo>
-							</li>
-						);
-					})}
-				</ProdutosCaixa>
-			</div>
+
+				<ProdutosCaixa>{listaDeProdutos}</ProdutosCaixa>
+			</ContainerProdutos>
 		);
 	}
 }
