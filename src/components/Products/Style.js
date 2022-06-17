@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const ContainerProdutos = styled.section`
+	border: 1px solid black;
+`;
+
 export const ProdutosCaixa = styled.ul`
 	display: grid;
 
@@ -7,11 +11,9 @@ export const ProdutosCaixa = styled.ul`
 	grid-gap: 20px;
 
 	padding: 10px;
-	margin-top: 10px;
 	list-style: none;
 
 	background-color: #fff;
-	border-radius: 5px;
 
 	li {
 		display: flex;
@@ -68,8 +70,5 @@ export const QuantidadeProdutos = styled.div`
 	justify-content: space-between;
 
 	padding: 10px;
-	border: 1px solid black;
-	border-radius: 5px;
-
 	background-color: #fff;
 `;
