@@ -12,6 +12,17 @@ import Camiseta4 from "../.././img/camiseta-astronauta.jpg";
 import Camiseta5 from "../.././img/camiseta-ovni.jpg";
 
 export default class ProductCards extends Component {
+		state ={
+			order:"asc"
+		}
+
+		updateOrder = (event) => {
+			this.setState({
+				order: event.target.value
+			})
+		}
+
+
 	render() {
 		return (
 			<div>
@@ -19,9 +30,12 @@ export default class ProductCards extends Component {
 					<p>Quantidade de Produtos: 4</p>
 					<label>
 						Ordenação:
-						<select>
-							<option>Crescente</option>
-							<option>Decrescente</option>
+						<select
+						name="order"
+						value={this.state.order}
+						onChange={this.updateOrder}	>
+							<option value="asc">Crescente</option>
+							<option value="desc">Decrescente</option>
 						</select>
 					</label>
 				</QuantidadeProdutos>
