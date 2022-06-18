@@ -7,6 +7,8 @@ export const FiltroContainer = styled.section`
 	border-radius: 5px;
 `;
 
+export const Card = styled.section ``;
+
 export const FiltroBox = styled.section`
 	display: flex;
 	flex-direction: column;

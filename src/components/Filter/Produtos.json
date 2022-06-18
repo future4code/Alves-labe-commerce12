@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "imagem": "Camiseta1",
+        "title": "Camiseta Alien",
+        "price": 79.9
+    },
+    {
+        "id": "2",
+        "imagem": "Camiseta2",
+        "title": "Camiseta Nasa",
+        "price": 79.9
+    },
+    {
+        "id": "3",
+        "imagem": "Camiseta3",
+        "title": "Camiseta Alien",
+        "price": 59.9
+    },
+    {
+        "id": "4",
+        "imagem": "Camiseta4",
+        "title": "Camiseta Astronauta",
+        "price": 59.9
+    },
+    {
+        "id": "5",
+        "imagem": "Camiseta5",
+        "title": "Camiseta Ovni",
+        "price": 59.9
+    }
+]

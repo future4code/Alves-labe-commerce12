@@ -75,8 +75,8 @@ export default class ProductCards extends Component {
 			);
 		});
 
-		return (
-			<ContainerProdutos>
+    	return (		
+			<ContainerProdutos>				
 				<QuantidadeProdutos>
 					<p>Quantidade de Produtos: {this.state.produtos.length}</p>
 
