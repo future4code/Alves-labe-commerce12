@@ -1,79 +1,35 @@
 import React, { Component } from "react";
-import { FiltroContainer, FiltroBox, Card } from "./Style";
-import produtosList from "./Produtos.json"
+import { FiltroContainer, FiltroBox } from "./Style";
 
 export default class Filter extends Component {
-	state = {
-
-		produto: produtosList,
-
-		query: "",
-		minPrice: "",
-		maxPrice: ""
-
-	}
-
-	UpdateQuery = (event) => {
-		this.setState({
-			query: event.target.value
-		})
-	}
-
-	UpdateMinPrice = (event) => {
-		this.setState({
-			minPrice: event.target.value
-		})
-	}
-
-	UpdateMaxPrice = (event) => {
-		this.setState({
-			maxPrice: event.target.value
-		})
-	}
-
-
-
 	render() {
 		return (
 			<FiltroContainer>
-
-
-				{this.state.produto
-					.filter(prodt => {
-						return prodt.title.toLowerCase().includes(this.state.query.toLowerCase()) ||
-							prodt.imagem.toLowerCase().includes(this.state.query.toLowerCase())
-					})
-					.filter(prodt => {
-						return this.state.minPrice === "" || prodt.price >= this.state.minPrice
-					})
-					.filter(prodt => {
-						return this.state.maxPrice === "" || prodt.price <= this.state.maxPrice
-					})
-					.map(prodt => {
-						return <Card key={prodt.id} prodt={prodt} />
-					})}
-
 				<FiltroBox>
 					<h4>Filtros:</h4>
 					<label>Valor mínimo:</label>
-					<input type="number"
-						placeholder="100"
-						value={this.state.minPrice}
-						onChange={this.UpdateMinPrice}
+					<input
+						type="number"
+						placeholder="Valor Mínimo"
+						value={this.props.filterMinValue}
+						onChange={this.props.onChangeFilterMin}
 					/>
 
 					<label>Valor máximo:</label>
-					<input type="number"
-						placeholder="1000"
-						value={this.state.maxPrice}
-						onChange={this.UpdateMaxPrice}
+					<input
+						type="number"
+						placeholder="Valor Máximo"
+						value={this.props.filterMaxValue}
+						onChange={this.props.onChangeFilterMax}
 					/>
 
-					<label>Busca por nome:</label>
-					<input type="text"
-						placeholder="Produto"
-						value={this.state.query}
-						onChange={this.UpdateQuery} />
+					<label>Buscar por nome:</label>
+					<input
+						type="text"
+						placeholder="Digite o nome do produto"
+						value={this.props.filterName}
+						onChange={this.props.onChangeFilterName}
+					/>
 				</FiltroBox>
 			</FiltroContainer>
 		);
